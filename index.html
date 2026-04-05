@@ -1,10 +1,256 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>MHL Lost And Found</title>
-    </head>
-    <body>
-        
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MHL Lost And Found</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    </body>
+  <body>
+    <header>
+      <a href="" class="logo-link">
+        <img src="assets/icons/milton-logo.svg" alt="School Logo" />
+      </a>
+      <h1>MHS Lost And Found</h1>
+
+      <nav>
+        <ul class="nav-list">
+          <li class="main-links-container">
+            <ul class="main-links">
+              <li><a href="">Home</a></li>
+              <li><a href="">Browse</a></li>
+              <li><a href="">MHS</a></li>
+            </ul>
+          </li>
+          <li>
+            <ul class="authentication-links-container">
+              <li><a href="" class="authentication-link">Sign in</a></li>
+              <li><a href="" class="authentication-link">Sign up</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <button class="settings-button">
+        <img src="assets/icons/Setting_fill.svg" alt="Settings logo" />
+      </button>
+    </header>
+
+    <section class="settings-menu">
+      <button class="close-settings-button">
+        <img src="assets/icons/x.svg" alt="X button" />
+      </button>
+      <ul>
+        <li class="settings-item">
+          <label for="dyslexic-phont">Dyslexic Phont</label>
+          <input type="checkbox" id="dyslexic-phont" />
+        </li>
+        <li class="settings-item">
+          <label for="dark-mode">Dyslexic Phont</label>
+          <input type="checkbox" id="dark-mode" />
+        </li>
+        <li class="settings-item">
+          <label for="font-size">Dyslexic Phont</label>
+          <output for="font-size" id="font-size-output"></output>
+          <input type="range" id="font-size" />
+        </li>
+      </ul>
+    </section>
+
+    <main>
+      <section class="hero">
+        <h2>Find Your Lost Items in <br />Seconds</h2>
+        <button>Sign Up</button>
+      </section>
+
+      <section class="browse-items">
+        <div>
+          <h2>Browse Items</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <button class="browse-items-button">Browse Items</button>
+        </div>
+        <img src="assets/images/school-store.jpg" alt="browse items image" />
+      </section>
+
+      <section class="infinite-carousel">
+        <ul class="infinite-carousel-container">
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+        </ul>
+        <ul aria-hidden="true" class="infinite-carousel-container">
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+          <li class="card">
+            <img src="assets/images/water-bottle.jpg" alt="Item image" />
+            <p class="item-name">ex</p>
+            <p class="date-found">xx/xx/xxxx</p>
+            <p class="location-found">ex location</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="report-items">
+        <img
+          src="assets/images/entrance-hallway.jpg"
+          alt="report items image"
+        />
+        <div>
+          <h2>Report Items</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <button class="report-items-button">Report Items</button>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div class="background-image">
+          <h2>Stats</h2>
+          <div class="card-container">
+            <section class="stat-one">
+              <img
+                src="assets/icons/package_search.svg"
+                alt="Package icon"
+                class="icon"
+              />
+              <output>#</output>
+              <p>stat desc</p>
+            </section>
+            <div class="stat-container">
+              <section class="stat-two">
+                <img
+                  src="assets/icons/Info_alt.svg"
+                  alt="Info icon"
+                  class="icon"
+                />
+                <output>#</output>
+                <p>stat desc</p>
+              </section>
+              <section class="stat-three">
+                <img
+                  src="assets/icons/Dimond_alt_fill.svg"
+                  alt="Diamond icon"
+                  class="icon"
+                />
+                <output>#</output>
+                <p>stat desc</p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <section class="mission-container">
+          <div>
+            <a href="">
+              <img src="assets/icons/milton-logo.svg" alt="Logo image link" />
+            </a>
+            <h3>Our Mission</h3>
+          </div>
+
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </section>
+
+        <section class="navigation">
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Browse</a></li>
+            <li><a href="">Sign up</a></li>
+            <li><a href="">Sign in</a></li>
+          </ul>
+        </section>
+
+        <section class="contact">
+          <h3>Contact</h3>
+          <div>
+            <img
+              src="assets/icons/Phone.svg"
+              alt="Phone icon"
+              class="phone-icon"
+            />
+            <p class="phone-number">(608) 324-4235</p>
+          </div>
+          <div>
+            <img
+              src="assets/icons/Message.svg"
+              alt="Email icon"
+              class="email-icon"
+            />
+            <p class="email">mhslostandfound@gmail.com</p>
+          </div>
+        </section>
+      </div>
+      <div class="copyright-container">
+        <p>Copyright 2026 MHS Lost and Found</p>
+      </div>
+    </footer>
+  </body>
 </html>
