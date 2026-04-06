@@ -27,6 +27,7 @@ body,
 html,
 main {
   height: auto;
+  overflow-x: hidden;
 }
 
 main {
@@ -53,6 +54,49 @@ p {
   font-style: normal;
   font-size: 2rem;
   color: var(--text-color);
+}
+
+label {
+  font-family: "Figtree", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+a {
+  font-family: "Figtree", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+input {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  p {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 1rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
 }
 
 /* ==========================================================================
@@ -151,10 +195,123 @@ header a {
   font-style: normal;
 }
 
+.mobile-toggle {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .mobile-toggle {
+    display: block;
+    justify-self: left;
+    margin-left: auto;
+    background: none;
+    border-style: none;
+  }
+
+  header h1 {
+    margin: 1rem;
+  }
+
+  header nav {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    top: 5rem;
+    z-index: 100;
+    background: var(--primary-color);
+  }
+  header ul {
+    flex-direction: column;
+  }
+  header ul li {
+    margin: 0;
+  }
+
+  .nav-list li:nth-child(1) {
+    margin-right: 0;
+  }
+
+  .authentication-links-container li a,
+  .nav-list li a {
+    padding: 0.3rem;
+    font-size: 1rem;
+  }
+
+  .authentication-links-container li {
+    display: flex;
+    width: 100px;
+    height: 100%;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .logo-link img {
+    width: 3rem;
+    margin: 0rem;
+  }
+}
+
+header a:hover {
+  background-color: color-mix(in srgb, var(--primary-color), white 20%);
+}
+
+header a:active {
+  background-color: color-mix(in srgb, var(--primary-color), black 20%);
+}
+
+header a:focus-visible {
+  background-color: color-mix(in srgb, var(--primary-color), white 20%);
+}
+
+header button:hover {
+  filter: brightness(0.5);
+}
+
+header button:focus-visible {
+  filter: brightness(0.5);
+}
+
+header button:active {
+  filter: brightness(1.2);
+}
+
 /* settings styles */
 .settings-menu {
-  visibility: hidden;
   position: absolute;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  right: 0;
+  top: 5rem;
+  background: var(--bg-color);
+  height: auto;
+  z-index: 100;
+}
+
+.settings-menu ul {
+  list-style: none;
+  padding: 1rem;
+}
+
+.settings-menu li {
+  display: flex;
+  padding: 0.5rem;
+  gap: 1rem;
+}
+
+.settings-menu label {
+  font-size: 1rem;
 }
 
 /* hero styles */
@@ -175,7 +332,7 @@ header a {
 }
 
 .hero h2 {
-  margin-top: 10%;
+  margin-top: 10rem;
   color: var(--light-text-color);
   font-family: "Schoolbell", cursive;
   font-weight: 400;
@@ -197,6 +354,30 @@ header a {
   cursor: pointer;
 }
 
+.hero button:hover {
+  background-color: color-mix(in srgb, var(--accent-color), white 20%);
+}
+
+.hero button:focus-visible {
+  background-color: color-mix(in srgb, var(--accent-color), white 20%);
+}
+
+@media (max-width: 1200px) {
+  .hero h2 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+  .hero button {
+    margin: 2rem;
+    font-size: 1rem;
+  }
+}
+
 /* browse items section styles */
 
 .browse-items {
@@ -214,27 +395,70 @@ header a {
   padding-right: 10%;
   padding-top: 5%;
 }
-.browse-items button {
+.browse-items-button {
   align-self: flex-start;
-  font-size: 24px;
+  font-size: 1.5rem;
   background-color: #ffffff;
   margin-top: 20px;
-  padding: 5px;
+  padding: 0.5rem;
+  border-style: solid;
+  border-width: 2px;
+  cursor: pointer;
 }
 
 .browse-items img {
-  height: 75%;
   width: 40%;
   object-fit: cover;
-  margin: 50px;
+  margin: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .browse-items img {
+    margin: 1rem;
+  }
+
+  .browse-items a {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .browse-items h2 {
+    font-size: 1.25rem;
+  }
+  .browse-items p {
+    font-size: 0.75rem;
+  }
+  .browse-items a {
+    font-size: 0.75rem;
+  }
+}
+
+.browse-items a:hover {
+  background-color: color-mix(in srgb, var(--bg-color), red 20%);
+}
+
+.browse-items a:active {
+  background-color: color-mix(in srgb, var(--bg-color), darkred 20%);
+}
+
+.browse-items a:focus-visible {
+  background-color: color-mix(in srgb, var(--bg-color), red 20%);
 }
 
 /* infinate carousel */
+
+.infinite-carousel-link {
+  text-decoration: none;
+}
+
 .infinite-carousel {
   margin: 100px auto;
   width: 90%;
   display: flex;
   overflow-x: auto;
+  overflow: hidden;
+  touch-action: manipulation;
 }
 
 .infinite-carousel::-webkit-scrollbar {
@@ -306,40 +530,39 @@ header a {
   padding: 5px;
 }
 .report-items img {
-  height: 75%;
   width: 40%;
   object-fit: cover;
   margin: 50px;
 }
 
-/* stats */
-.stats {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 75vh;
+@media (max-width: 1200px) {
+  .report-items img {
+    margin: 1rem;
+  }
+
+  .report-items a {
+    font-size: 1rem;
+  }
 }
 
-.background-image {
-  height: 100%;
-  width: 100%;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)),
-    url(assets/images/grid-background2.png);
+.report-items a:hover {
+  background-color: color-mix(in srgb, var(--bg-color), red 20%);
+}
 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  image-rendering: pixelated;
+.report-items a:active {
+  background-color: color-mix(in srgb, var(--bg-color), darkred 20%);
+}
+
+.report-items a:focus-visible {
+  background-color: color-mix(in srgb, var(--bg-color), red 20%);
 }
 
 /* footer */
 footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-top: auto;
   background: var(--alt-dark-gray-color);
-
   padding-bottom: 0;
 }
 
@@ -394,6 +617,7 @@ footer h3 {
 footer a {
   color: var(--light-text-color);
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .copyright-container {
@@ -401,4 +625,22 @@ footer a {
   justify-content: center;
   width: 100%;
   background: var(--bg-dark-color);
+}
+
+footer a:hover {
+  color: color-mix(in srgb, var(--bg-color), red 20%);
+}
+
+footer a:active {
+  color: color-mix(in srgb, var(--bg-color), darkred 20%);
+}
+
+footer a:focus-visible {
+  color: color-mix(in srgb, var(--bg-color), red 20%);
+}
+
+@media (max-width: 1200px) {
+  footer .container {
+    flex-direction: column;
+  }
 }

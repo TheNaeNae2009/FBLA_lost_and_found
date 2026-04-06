@@ -9,49 +9,54 @@
 
   <body>
     <header>
-      <a href="" class="logo-link">
+      <a href="index.html" class="logo-link">
         <img src="assets/icons/milton-logo.svg" alt="School Logo" />
       </a>
       <h1>MHS Lost And Found</h1>
 
-      <nav>
+      <nav id="nav-menu">
         <ul class="nav-list">
           <li class="main-links-container">
             <ul class="main-links">
-              <li><a href="">Home</a></li>
-              <li><a href="">Browse</a></li>
-              <li><a href="">MHS</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="browse.html">Browse</a></li>
+              <li><a href="https://www.milton.k12.wi.us/">MHS</a></li>
             </ul>
           </li>
           <li>
             <ul class="authentication-links-container">
-              <li><a href="" class="authentication-link">Sign in</a></li>
-              <li><a href="" class="authentication-link">Sign up</a></li>
+              <li>
+                <a href="sign-in.html" class="authentication-link">Sign in</a>
+              </li>
+              <li>
+                <a href="sign-up.html" class="authentication-link">Sign up</a>
+              </li>
             </ul>
           </li>
         </ul>
       </nav>
 
-      <button class="settings-button">
+      <button class="mobile-toggle" id="mobile-toggle">
+        <img src="assets/icons/stack.svg" alt="Settings logo" />
+      </button>
+
+      <button class="settings-button" id="settings-button">
         <img src="assets/icons/Setting_fill.svg" alt="Settings logo" />
       </button>
     </header>
 
-    <section class="settings-menu">
-      <button class="close-settings-button">
-        <img src="assets/icons/x.svg" alt="X button" />
-      </button>
+    <section class="settings-menu" id="settings-menu">
       <ul>
         <li class="settings-item">
-          <label for="dyslexic-phont">Dyslexic Phont</label>
+          <label for="dyslexic-phont">Dyslexic Font</label>
           <input type="checkbox" id="dyslexic-phont" />
         </li>
         <li class="settings-item">
-          <label for="dark-mode">Dyslexic Phont</label>
+          <label for="dark-mode">Dyslexic Font</label>
           <input type="checkbox" id="dark-mode" />
         </li>
         <li class="settings-item">
-          <label for="font-size">Dyslexic Phont</label>
+          <label for="font-size">Dyslexic Font</label>
           <output for="font-size" id="font-size-output"></output>
           <input type="range" id="font-size" />
         </li>
@@ -73,77 +78,79 @@
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <button class="browse-items-button">Browse Items</button>
+          <a href="browse.html" class="browse-items-button">Browse Items</a>
         </div>
         <img src="assets/images/school-store.jpg" alt="browse items image" />
       </section>
 
-      <section class="infinite-carousel">
-        <ul class="infinite-carousel-container">
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-        </ul>
-        <ul aria-hidden="true" class="infinite-carousel-container">
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-          <li class="card">
-            <img src="assets/images/water-bottle.jpg" alt="Item image" />
-            <p class="item-name">ex</p>
-            <p class="date-found">xx/xx/xxxx</p>
-            <p class="location-found">ex location</p>
-          </li>
-        </ul>
-      </section>
+      <a href="browse.html" class="infinite-carousel-link">
+        <section class="infinite-carousel">
+          <ul class="infinite-carousel-container">
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+          </ul>
+          <ul aria-hidden="true" class="infinite-carousel-container">
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+            <li class="card">
+              <img src="assets/images/water-bottle.jpg" alt="Item image" />
+              <p class="item-name">ex</p>
+              <p class="date-found">xx/xx/xxxx</p>
+              <p class="location-found">ex location</p>
+            </li>
+          </ul>
+        </section>
+      </a>
 
       <section class="report-items">
         <img
@@ -158,44 +165,7 @@
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <button class="report-items-button">Report Items</button>
-        </div>
-      </section>
-
-      <section class="stats">
-        <div class="background-image">
-          <h2>Stats</h2>
-          <div class="card-container">
-            <section class="stat-one">
-              <img
-                src="assets/icons/package_search.svg"
-                alt="Package icon"
-                class="icon"
-              />
-              <output>#</output>
-              <p>stat desc</p>
-            </section>
-            <div class="stat-container">
-              <section class="stat-two">
-                <img
-                  src="assets/icons/Info_alt.svg"
-                  alt="Info icon"
-                  class="icon"
-                />
-                <output>#</output>
-                <p>stat desc</p>
-              </section>
-              <section class="stat-three">
-                <img
-                  src="assets/icons/Dimond_alt_fill.svg"
-                  alt="Diamond icon"
-                  class="icon"
-                />
-                <output>#</output>
-                <p>stat desc</p>
-              </section>
-            </div>
-          </div>
+          <a href="sign-up.html" class="browse-items-button">Report Items</a>
         </div>
       </section>
     </main>
@@ -221,10 +191,10 @@
         <section class="navigation">
           <h3>Navigation</h3>
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Browse</a></li>
-            <li><a href="">Sign up</a></li>
-            <li><a href="">Sign in</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="browse.html">Browse</a></li>
+            <li><a href="sign-up.html">Sign up</a></li>
+            <li><a href="sign-in.html">Sign in</a></li>
           </ul>
         </section>
 
@@ -252,5 +222,6 @@
         <p>Copyright 2026 MHS Lost and Found</p>
       </div>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
