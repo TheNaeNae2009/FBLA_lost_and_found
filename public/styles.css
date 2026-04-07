@@ -803,6 +803,90 @@ footer a:focus-visible {
 /* ==========================================================================
    SIGN UP PAGE
    ========================================================================== */
+.sign-up-main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.side-image-sign-up {
+  background-image: url(assets/images/entrance-hallway.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  height: 100%;
+}
+
+.side-image-sign-up img {
+  margin: 1rem;
+}
+
+.sign-up-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sign-up-form h1 {
+  font-family: "Figtree";
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 1rem;
+}
+.sign-up-form input {
+  width: 80%;
+  height: 3rem;
+  font-family: "Figtree";
+  font-size: 1.2rem;
+  padding: 0.5em;
+}
+
+.sign-up-form a {
+  font-family: "Figtree";
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sign-up-form button {
+  font-family: "Figtree";
+  font-size: 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--light-text-color);
+  border: none;
+  padding: 0.3em;
+  font-style: normal;
+}
+
+.sign-up-form hr {
+  width: 50%;
+  margin-bottom: 2rem;
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .side-image {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .sign-in-form button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), white 20%);
+  }
+}
+
+.sign-up-form button:active {
+  background-color: color-mix(in srgb, var(--accent-color), black 20%);
+}
+
+.sign-up-form button:focus-visible {
+  background-color: color-mix(in srgb, var(--accent-color), white 20%);
+}
 
 /* ==========================================================================
    ADMIN DASHBOARD PAGE
