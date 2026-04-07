@@ -780,6 +780,26 @@ footer a:focus-visible {
   border-color: var(--accent-color);
 }
 
+@media (max-width: 768px) {
+  .side-image {
+    display: none;
+  }
+}
+
+@media (hover: hover) {
+  .sign-in-form button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), white 20%);
+  }
+}
+
+.sign-in-form button:active {
+  background-color: color-mix(in srgb, var(--accent-color), black 20%);
+}
+
+.sign-in-form button:focus-visible {
+  background-color: color-mix(in srgb, var(--accent-color), white 20%);
+}
+
 /* ==========================================================================
    SIGN UP PAGE
    ========================================================================== */
