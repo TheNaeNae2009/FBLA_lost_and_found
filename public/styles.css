@@ -214,7 +214,7 @@ header a {
 
   header nav {
     position: absolute;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -262,8 +262,10 @@ header a {
   }
 }
 
-header a:hover {
-  background-color: color-mix(in srgb, var(--primary-color), white 20%);
+@media (hover: hover) {
+  header a:hover {
+    background-color: color-mix(in srgb, var(--primary-color), white 20%);
+  }
 }
 
 header a:active {
@@ -274,8 +276,10 @@ header a:focus-visible {
   background-color: color-mix(in srgb, var(--primary-color), white 20%);
 }
 
-header button:hover {
-  filter: brightness(0.5);
+@media (hover: hover) {
+  header button:hover {
+    filter: brightness(0.5);
+  }
 }
 
 header button:focus-visible {
@@ -333,17 +337,19 @@ header button:active {
 
 .hero h2 {
   margin-top: 10rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   color: var(--light-text-color);
   font-family: "Schoolbell", cursive;
   font-weight: 400;
   font-size: 4rem;
   font-style: normal;
-  white-space: nowrap;
   width: fit-content;
 }
 
 .hero button {
   padding: 10px;
+  margin-top: 2rem;
   background-color: var(--accent-color);
   border-color: transparent;
   border-style: none;
@@ -354,8 +360,10 @@ header button:active {
   cursor: pointer;
 }
 
-.hero button:hover {
-  background-color: color-mix(in srgb, var(--accent-color), white 20%);
+@media (hover: hover) {
+  .hero button:hover {
+    background-color: color-mix(in srgb, var(--accent-color), white 20%);
+  }
 }
 
 .hero button:focus-visible {
@@ -370,7 +378,7 @@ header button:active {
 
 @media (max-width: 768px) {
   .hero h2 {
-    font-size: 1.75rem;
+    font-size: 3rem;
   }
   .hero button {
     margin: 2rem;
@@ -424,18 +432,34 @@ header button:active {
 
 @media (max-width: 768px) {
   .browse-items h2 {
-    font-size: 1.25rem;
+    font-size: 2rem;
   }
   .browse-items p {
-    font-size: 0.75rem;
+    font-size: 1.25rem;
   }
   .browse-items a {
-    font-size: 0.75rem;
+    font-size: 1rem;
+  }
+
+  .browse-items-button {
+    align-self: center;
+  }
+
+  .browse-items img {
+    width: 90%;
+  }
+
+  .browse-items {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
   }
 }
 
-.browse-items a:hover {
-  background-color: color-mix(in srgb, var(--bg-color), red 20%);
+@media (hover: hover) {
+  .browse-items a:hover {
+    background-color: color-mix(in srgb, var(--bg-color), red 20%);
+  }
 }
 
 .browse-items a:active {
@@ -506,6 +530,13 @@ header button:active {
   object-fit: cover;
 }
 
+@media (max-width: 768px) {
+  .card {
+    height: 22rem;
+    width: 15rem;
+  }
+}
+
 /* report items */
 .report-items {
   display: flex;
@@ -542,6 +573,30 @@ header button:active {
 
   .report-items a {
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .report-items {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+
+    margin-bottom: 8rem;
+  }
+  .report-items h2 {
+    font-size: 2rem;
+  }
+  .report-items p {
+    font-size: 1.25rem;
+  }
+  .report-items a {
+    font-size: 1rem;
+    align-self: center;
+  }
+
+  .report-items img {
+    width: 90%;
   }
 }
 
@@ -627,8 +682,10 @@ footer a {
   background: var(--bg-dark-color);
 }
 
-footer a:hover {
-  color: color-mix(in srgb, var(--bg-color), red 20%);
+@media (hover: hover) {
+  footer a:hover {
+    color: color-mix(in srgb, var(--bg-color), red 20%);
+  }
 }
 
 footer a:active {
