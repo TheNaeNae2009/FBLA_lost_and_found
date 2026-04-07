@@ -99,10 +99,6 @@ button {
   }
 }
 
-/* ==========================================================================
-   HOME PAGE
-   ========================================================================== */
-
 /* header styles */
 header {
   display: flex;
@@ -317,6 +313,100 @@ header button:active {
 .settings-menu label {
   font-size: 1rem;
 }
+
+/* footer */
+footer {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+  background: var(--alt-dark-gray-color);
+  padding-bottom: 0;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+footer section {
+  width: 100%;
+  text-align: center;
+}
+
+.mission-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-1.5rem);
+}
+.mission-container img {
+  width: 3rem;
+}
+
+.contact div {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.navigation ul {
+  list-style: none;
+}
+
+.navigation li {
+  margin-top: 0.5rem;
+}
+
+footer p {
+  color: var(--light-text-color);
+  font-size: 1rem;
+}
+footer h3 {
+  color: var(--light-text-color);
+  font-size: 2rem;
+}
+
+footer a {
+  color: var(--light-text-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.copyright-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: var(--bg-dark-color);
+}
+
+@media (hover: hover) {
+  footer a:hover {
+    color: color-mix(in srgb, var(--bg-color), red 20%);
+  }
+}
+
+footer a:active {
+  color: color-mix(in srgb, var(--bg-color), darkred 20%);
+}
+
+footer a:focus-visible {
+  color: color-mix(in srgb, var(--bg-color), red 20%);
+}
+
+@media (max-width: 1200px) {
+  footer .container {
+    flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+   HOME PAGE
+   ========================================================================== */
 
 /* hero styles */
 .hero {
@@ -610,94 +700,4 @@ header button:active {
 
 .report-items a:focus-visible {
   background-color: color-mix(in srgb, var(--bg-color), red 20%);
-}
-
-/* footer */
-footer {
-  display: flex;
-  flex-direction: column;
-  margin-top: auto;
-  background: var(--alt-dark-gray-color);
-  padding-bottom: 0;
-}
-
-footer .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5rem;
-  padding: 2rem;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-}
-
-footer section {
-  width: 100%;
-  text-align: center;
-}
-
-.mission-container div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateX(-1.5rem);
-}
-.mission-container img {
-  width: 3rem;
-}
-
-.contact div {
-  display: flex;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.navigation ul {
-  list-style: none;
-}
-
-.navigation li {
-  margin-top: 0.5rem;
-}
-
-footer p {
-  color: var(--light-text-color);
-  font-size: 1rem;
-}
-footer h3 {
-  color: var(--light-text-color);
-  font-size: 2rem;
-}
-
-footer a {
-  color: var(--light-text-color);
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.copyright-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background: var(--bg-dark-color);
-}
-
-@media (hover: hover) {
-  footer a:hover {
-    color: color-mix(in srgb, var(--bg-color), red 20%);
-  }
-}
-
-footer a:active {
-  color: color-mix(in srgb, var(--bg-color), darkred 20%);
-}
-
-footer a:focus-visible {
-  color: color-mix(in srgb, var(--bg-color), red 20%);
-}
-
-@media (max-width: 1200px) {
-  footer .container {
-    flex-direction: column;
-  }
 }
