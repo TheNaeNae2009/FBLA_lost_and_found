@@ -869,13 +869,13 @@ footer a:focus-visible {
 }
 
 @media (max-width: 768px) {
-  .side-image {
+  .side-image-sign-up {
     display: none;
   }
 }
 
 @media (hover: hover) {
-  .sign-in-form button:hover {
+  .sign-up-form button:hover {
     background-color: color-mix(in srgb, var(--accent-color), white 20%);
   }
 }
