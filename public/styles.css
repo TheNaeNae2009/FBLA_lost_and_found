@@ -695,11 +695,11 @@ footer a:focus-visible {
     width: 90%;
   }
 }
-
-.report-items a:hover {
-  background-color: color-mix(in srgb, var(--bg-color), red 20%);
+@media (hover: hover) {
+  .report-items a:hover {
+    background-color: color-mix(in srgb, var(--bg-color), red 20%);
+  }
 }
-
 .report-items a:active {
   background-color: color-mix(in srgb, var(--bg-color), darkred 20%);
 }
@@ -715,6 +715,70 @@ footer a:focus-visible {
 /* ==========================================================================
    SIGN IN PAGE
    ========================================================================== */
+.sign-in-main {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.side-image {
+  background-image: url(assets/images/entrance-hallway.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  height: 100%;
+}
+
+.side-image img {
+  margin: 1rem;
+}
+
+.sign-in-form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.sign-in-form h1 {
+  font-family: "Figtree";
+  font-size: 3rem;
+  font-weight: bold;
+  font-style: normal;
+  margin-top: 1rem;
+}
+.sign-in-form input {
+  width: 80%;
+  height: 3rem;
+  font-family: "Figtree";
+  font-size: 1.2rem;
+  padding: 0.5em;
+}
+
+.sign-in-form a {
+  font-family: "Figtree";
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sign-in-form button {
+  font-family: "Figtree";
+  font-size: 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--light-text-color);
+  border: none;
+  padding: 0.3em;
+  font-style: normal;
+}
+
+.sign-in-form hr {
+  width: 50%;
+  margin-bottom: 2rem;
+  border-color: var(--accent-color);
+}
 
 /* ==========================================================================
    SIGN UP PAGE
