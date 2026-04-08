@@ -410,6 +410,64 @@ footer a:focus-visible {
   }
 }
 
+/* searchable list styles */
+.searchable-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 50%;
+  margin-top: 3rem;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+}
+
+.input-group input {
+  height: 2rem;
+  font-family: "Figtree" sans-serif;
+  font-size: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  background: transparent;
+}
+
+.input-group img {
+  position: absolute;
+  left: 100%;
+  background: transparent;
+  height: 100%;
+}
+
+.x-icon {
+  display: none;
+}
+
+.searchable-list ul {
+  list-style: none;
+  width: 50%;
+  gap: 1rem;
+  margin-bottom: 5%;
+}
+
+.searchable-list li {
+  background: var(--gray-color);
+  border-radius: 5px;
+  height: 3rem;
+  justify-content: left;
+  align-content: center;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
 /* ==========================================================================
    HOME PAGE
    ========================================================================== */
@@ -443,7 +501,7 @@ footer a:focus-visible {
   width: fit-content;
 }
 
-.hero button {
+.hero a {
   padding: 10px;
   margin-top: 2rem;
   background-color: var(--accent-color);
@@ -454,15 +512,16 @@ footer a:focus-visible {
   font-weight: normal;
   font-size: 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 @media (hover: hover) {
-  .hero button:hover {
+  .hero a:hover {
     background-color: color-mix(in srgb, var(--accent-color), white 20%);
   }
 }
 
-.hero button:focus-visible {
+.hero a:focus-visible {
   background-color: color-mix(in srgb, var(--accent-color), white 20%);
 }
 
@@ -709,16 +768,19 @@ footer a:focus-visible {
 }
 
 /* ==========================================================================
-   BROWSE PAGE
-   ========================================================================== */
-
-/* ==========================================================================
    SIGN IN PAGE
    ========================================================================== */
 .sign-in-main {
   display: flex;
   flex-direction: row;
   height: 100vh;
+}
+
+.sign-in-form div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .side-image {
@@ -747,7 +809,6 @@ footer a:focus-visible {
   font-size: 3rem;
   font-weight: bold;
   font-style: normal;
-  margin-top: 1rem;
 }
 .sign-in-form input {
   width: 80%;
@@ -772,6 +833,7 @@ footer a:focus-visible {
   border: none;
   padding: 0.3em;
   font-style: normal;
+  width: 80%;
 }
 
 .sign-in-form hr {
@@ -809,6 +871,13 @@ footer a:focus-visible {
   height: 100vh;
 }
 
+.sign-up-form div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 .side-image-sign-up {
   background-image: url(assets/images/entrance-hallway.jpg);
   background-repeat: no-repeat;
@@ -835,7 +904,6 @@ footer a:focus-visible {
   font-size: 3rem;
   font-weight: bold;
   font-style: normal;
-  margin-top: 1rem;
 }
 .sign-up-form input {
   width: 80%;
@@ -860,6 +928,7 @@ footer a:focus-visible {
   border: none;
   padding: 0.3em;
   font-style: normal;
+  width: 80%;
 }
 
 .sign-up-form hr {
