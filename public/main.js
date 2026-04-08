@@ -22,3 +22,29 @@ if (nav && settingsMenu) {
     }
   });
 }
+
+// searchable list display update
+const searchableList = document.getElementById("searchable-list");
+const searchInput = document.getElementById("search-input");
+const lists = document.querySelectorAll("#list li");
+const xIcon = document.getElementById("x-icon");
+const searchIcon = document.getElementById("search-icon");
+
+const updateDisplay = () => {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  xIcon.style.display = searchTerm ? "block" : "none";
+  searchIcon.style.display = searchTerm ? "none" : "block";
+
+  lists.forEach((item) => {
+    const languageName = item.textContent.toLowerCase();
+    item.style.display = languageName.includes(searchTerm) ? "block" : "none";
+  });
+};
+
+if (searchableList) {
+  searchInput.addEventListener("input", updateDisplay);
+  xIcon.addEventListener("click", () => {
+    searchInput.value = "";
+    updateDisplay();
+  });
+}
