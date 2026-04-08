@@ -1,3 +1,5 @@
+// settings and mobile nav toggles
+
 const settingsToggle = document.getElementById("settings-button");
 const settingsMenu = document.getElementById("settings-menu");
 const navToggle = document.getElementById("mobile-toggle");
