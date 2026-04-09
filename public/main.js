@@ -36,8 +36,10 @@ const updateDisplay = () => {
   searchIcon.style.display = searchTerm ? "none" : "block";
 
   lists.forEach((item) => {
-    const languageName = item.textContent.toLowerCase();
-    item.style.display = languageName.includes(searchTerm) ? "block" : "none";
+    const textContainer = item.querySelector(".listing-text-container");
+    const title = textContainer.querySelector(".listing-title");
+    const titleText = title.textContent.trim().toLowerCase();
+    item.style.display = titleText.includes(searchTerm) ? "flex" : "none";
   });
 };
 
