@@ -375,6 +375,9 @@ footer p {
 footer h3 {
   color: var(--light-text-color);
   font-size: 2rem;
+  font-family: "Figtree";
+  font-weight: bold;
+  font-style: normal;
 }
 
 footer a {
