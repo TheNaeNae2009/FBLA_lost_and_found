@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // env
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 // Routers
 import userRouter from "./routes/user.routes";
