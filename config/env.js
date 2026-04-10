@@ -1,6 +1,6 @@
 import { config } from "dotenv";
 config(options, {
-  path: `.env.${process.env.NODE_END || "development"}.local`,
+  path: process.env,
 });
 
 export const { PORT } = process.env;
