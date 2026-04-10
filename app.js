@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 // Routers
 import userRouter from "./routes/user.routes.js";
 import authRouter from "./routes/auth.routes.js";
+import connectToDatabase from "./database/mongodb.js";
 
 const app = express();
 
@@ -24,8 +25,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, async () => {
   console.log(`Listening on ports ${PORT}`);
+
+  await connectToDatabase();
 });
 
 export default app;
