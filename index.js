@@ -1,8 +1,11 @@
 import express from "express";
 
-import { PORT } from "./config/env.js";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
+
+const PORT = process.env.PORT;
 
 app.use(express.static("public"));
 
