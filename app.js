@@ -10,8 +10,8 @@ const __dirname = path.dirname(__filename);
 const PORT = process.env.PORT || 3000;
 
 // Routers
-import userRouter from "./routes/user.routes";
-import authRouter from "./routes/auth.routes";
+import userRouter from "./routes/user.routes.js";
+import authRouter from "./routes/auth.routes.js";
 
 const app = express();
 
