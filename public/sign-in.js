@@ -1,5 +1,5 @@
 //logs the user in after the form is subbmited
-const form = document.querySelector("#sign-up-form");
+const form = document.querySelector("#sign-in-form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
