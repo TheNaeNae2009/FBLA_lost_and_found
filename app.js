@@ -1,5 +1,4 @@
 import express from "express";
-import cookieParser from "cookie-parser";
 
 import path from "path";
 import { fileURLToPath } from "url";
@@ -23,7 +22,6 @@ app.use("/api/v1/users", userRouter);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static("public"));
 app.use(errorMiddleware);
 
