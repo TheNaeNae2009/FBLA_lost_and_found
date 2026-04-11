@@ -26,7 +26,7 @@ async function logIn(form) {
   const name = form.username?.value;
   const email = form.email.value;
   const password = form.password.value;
-  const confirm_password = form.confirm_password.value;
+  const confirm_password = form.confirm.value;
 
   if (password != confirm_password) {
     throw new Error("Password does not match");
