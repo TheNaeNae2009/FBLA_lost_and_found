@@ -8,6 +8,7 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN;
 import User from "../models/user.model.js";
 
 export const signUp = async (req, res, next) => {
+  console.log("BODY:", req.body);
   const session = await mongoose.startSession();
   session.startTransaction();
 
