@@ -35,7 +35,7 @@ async function signUp(form) {
   const headers = { "Content-Type": "application/json" };
 
   try {
-    res = await fetch("http://localhost:5500/api/v1/auth/sign-up", {
+    res = await fetch("https://mhslostandfound.com/api/v1/auth/sign-up", {
       method: "POST",
       headers,
       body: JSON.stringify({ name, email, password }),
