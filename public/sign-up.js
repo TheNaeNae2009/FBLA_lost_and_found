@@ -23,7 +23,7 @@ function openProperPage() {
 }
 
 async function signUp(form) {
-  const name = form.username?.value;
+  const name = form.name?.value;
   const email = form.email.value;
   const password = form.password.value;
   const confirm_password = form.confirm.value;
