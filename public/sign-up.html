@@ -9,7 +9,7 @@
   <body>
     <main class="sign-up-main">
       <div class="side-image-sign-up"></div>
-      <form action="none" class="sign-up-form">
+      <form action="none" class="sign-up-form" id="sign-up-form">
         <div>
           <a href="index.html">
             <img src="assets/icons/milton-logo.svg" alt="Milton logo" />
@@ -18,14 +18,10 @@
         </div>
 
         <hr />
-        <input type="text" id="name-field" placeholder="Full Name" />
-        <input type="text" id="email-field" placeholder="Email" />
-        <input type="text" id="password-field" placeholder="Password" />
-        <input
-          type="text"
-          id="confirm-password-field"
-          placeholder="Confirm Password"
-        />
+        <input type="text" name="name" id="name-field" placeholder="Full Name" />
+        <input type="text" name="email" id="email-field" placeholder="Email" />
+        <input type="text" name="password" id="password-field" placeholder="Password" />
+        <input type="text" name="password-confirm" id="confirm-password-field" placeholder="Confirm Password" />
         <button type="submit">Sign Up</button>
         <a href="sign-in.html">sign in instead</a>
       </form>
