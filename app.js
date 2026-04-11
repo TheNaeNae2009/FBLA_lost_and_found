@@ -22,6 +22,7 @@ app.use("/api/v1/users", userRouter);
 
 app.use(express.static("public"));
 app.use(errorMiddleware);
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
