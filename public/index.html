@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MHS Lost And Found</title>
+    <link rel="icon" href="assets/icons/milton-logo.png">
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
     <header>
       <a href="index.html" class="logo-link">
-        <img src="assets/icons/milton-logo.svg" alt="School Logo" />
+        <img aria-label="Milton High School Logo" src="assets/icons/milton-logo.svg" alt="School Logo" />
       </a>
       <h1>MHS Lost And Found</h1>
 
@@ -20,7 +21,7 @@
             <ul class="main-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="browse.html">Browse</a></li>
-              <li><a href="https://www.milton.k12.wi.us/">MHS</a></li>
+              <li><a href="https://www.milton.k12.wi.us/schools/high-schools/">MHS</a></li>
             </ul>
           </li>
           <li>
@@ -41,22 +42,22 @@
       </button>
 
       <button class="settings-button" id="settings-button">
-        <img src="assets/icons/Setting_fill.svg" alt="Settings logo" />
+        <img src="assets/icons/setting_fill.svg" alt="Settings logo" />
       </button>
     </header>
 
     <section class="settings-menu" id="settings-menu">
       <ul>
         <li class="settings-item">
-          <label for="dyslexic-phont">Dyslexic Font</label>
-          <input type="checkbox" id="dyslexic-phont" />
+          <label for="dyslexic-font">Dyslexic Font</label>
+          <input type="checkbox" id="dyslexic-font" />
         </li>
         <li class="settings-item">
-          <label for="dark-mode">Dyslexic Font</label>
+          <label for="dark-mode">Dark Mode</label>
           <input type="checkbox" id="dark-mode" />
         </li>
         <li class="settings-item">
-          <label for="font-size">Dyslexic Font</label>
+          <label for="font-size">Font Size</label>
           <output for="font-size" id="font-size-output"></output>
           <input type="range" id="font-size" />
         </li>
@@ -73,16 +74,15 @@
         <div>
           <h2>Browse Items</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            Once you're signed in, you can view a list of all the items that have been reported lost or found. 
+            You can also search by name to find your item faster.
           </p>
           <a href="browse.html" class="browse-items-button">Browse Items</a>
         </div>
         <img src="assets/images/school-store.jpg" alt="browse items image" />
       </section>
 
-      <a href="browse.html" class="infinite-carousel-link">
+      <a aria-label="Scrolling Item Listings" href="browse.html" class="infinite-carousel-link">
         <section class="infinite-carousel">
           <ul class="infinite-carousel-container">
             <li class="card">
@@ -156,9 +156,8 @@
         <div>
           <h2>Report Items</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            If you have lost an item, you can report it on our website. Just fill out a form with the details of the item and upload a few pictures, 
+            this will help others identify your lost items faster.
           </p>
           <a href="sign-up.html" class="browse-items-button">Report Items</a>
         </div>
@@ -174,11 +173,9 @@
             </a>
             <h3>Our Mission</h3>
           </div>
-
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat.
+            Our mission is to help reunite you with your lost items and build a kinder, more caring community at Milton High School. 
+            We offer a safe and easy way for students, teachers, and staff to report and find items.
           </p>
         </section>
 
@@ -195,11 +192,11 @@
         <section class="contact">
           <h3>Contact</h3>
           <div>
-            <img src="assets/icons/Phone.svg" alt="Phone icon" class="phone-icon" />
+            <img src="assets/icons/phone.svg" alt="Phone icon" class="phone-icon" />
             <p class="phone-number">(608) 324-4235</p>
           </div>
           <div>
-            <img src="assets/icons/Message.svg" alt="Email icon" class="email-icon" />
+            <img src="assets/icons/message.svg" alt="Email icon" class="email-icon" />
             <p class="email">mhslostandfound@gmail.com</p>
           </div>
         </section>
