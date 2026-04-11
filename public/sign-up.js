@@ -3,7 +3,7 @@ const form = document.querySelector("#sign-up-form");
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  await logIn(form);
+  await signUp(form);
 });
 
 function saveAuth(data) {
@@ -22,7 +22,7 @@ function openProperPage() {
   }
 }
 
-async function logIn(form) {
+async function signUp(form) {
   const name = form.username?.value;
   const email = form.email.value;
   const password = form.password.value;
