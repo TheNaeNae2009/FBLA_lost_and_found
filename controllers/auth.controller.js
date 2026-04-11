@@ -12,7 +12,7 @@ export const signUp = async (req, res, next) => {
   session.startTransaction();
 
   try {
-    console.log(req);
+    console.log(req.body);
     const { name, email, password } = req.body;
 
     // Check if a user already exists
