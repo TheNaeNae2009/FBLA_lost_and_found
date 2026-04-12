@@ -897,7 +897,7 @@ footer a:focus-visible {
 .sign-up-main {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .sign-up-form div {
@@ -999,7 +999,7 @@ footer a:focus-visible {
 .dashboard-body {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 100dvh;
 }
 
 .dashboard-body main {
