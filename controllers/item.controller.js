@@ -56,6 +56,17 @@ export const getItems = async (req, res, next) => {
   }
 };
 
+export const getPendingItems = async (req, res, next) => {
+  try {
+    const items = await Item.find({ status:"pending" });
+
+    res.status(200).json({ success: true, data: items });
+  } catch (error) {
+    next(error);
+  }
+};
+
+
 export const getItem = async (req, res, next) => {
   try {
     const item = await Item.findOne({ title: req.params.title });
