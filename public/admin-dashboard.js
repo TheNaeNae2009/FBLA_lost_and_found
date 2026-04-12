@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     const response = await res.json();
-    addListItems(response.data.data);
+    addListItems(response.data);
   } catch (error) {
     console.log(error);
   }
