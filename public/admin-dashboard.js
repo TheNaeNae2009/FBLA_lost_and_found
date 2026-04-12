@@ -37,7 +37,7 @@ function addListItems(data) {
     li.innerHTML = `
     <img src="${img.startsWith("http") ? img : "/" + img}" />
     <div class="listing-text-container">
-      <p class="listing-title">${data.title}</p>
+      <p class="listing-title">${data.name}</p>
       <p>${data.dateFound}</p>
       <p>${data.location}</p>
     </div>
