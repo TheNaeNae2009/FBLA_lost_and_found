@@ -30,10 +30,13 @@ reportItemForm.addEventListener("submit", async (e) => {
 
   const formData = new FormData(reportItemForm);
 
+  const token = localStorage.getItem("token");
+
   try {
     const res = await fetch("https://mhslostandfound.com/api/v1/items/", {
       method: "POST",
       body: formData,
+      headers: { Authorization: `Bearer ${token}` },
     });
 
     const data = await res.json();
