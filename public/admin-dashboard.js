@@ -32,7 +32,7 @@ function addListItems(data) {
   data.forEach((data) => {
     const li = document.createElement("li");
 
-    const img = item.images?.[0] || "/assets/default.jpg";
+    const img = data.images?.[0] || "/assets/default.jpg";
 
     li.innerHTML = `
     <img src="${img.startsWith("http") ? img : "/" + img}" />
