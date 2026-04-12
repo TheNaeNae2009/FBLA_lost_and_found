@@ -25,3 +25,20 @@ pendingItemsButton.addEventListener("click", () => {
   browsePendingItemsContainer.style.display = "flex";
   manageItemsContainer.style.display = "none";
 });
+
+function addListItem(item) {
+  const ul = document.getElementById("list");
+
+  const li = document.createElement("li");
+
+  li.innerHTML = `
+    <img src="${item.imageUrl}" alt="picture of item" />
+    <div class="listing-text-container">
+      <p class="listing-title">${item.title}</p>
+      <p>${item.date}</p>
+      <p>${item.location}</p>
+    </div>
+  `;
+
+  ul.appendChild(li);
+}
