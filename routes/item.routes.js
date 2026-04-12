@@ -5,7 +5,7 @@ import { uploadItem } from "../controllers/item.controller.js";
 
 const itemRouter = Router();
 
-itemRouter.post("/", authorize, upload.array("images", 5), uploadItem);
+itemRouter.post("/", upload.any(), authorize, uploadItem);
 
 // itemRouter.get("/");
 
