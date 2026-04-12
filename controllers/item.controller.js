@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 import Item from "../models/item.model.js";
 
 export const uploadItem = async (req, res, next) => {
