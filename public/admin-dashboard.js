@@ -26,19 +26,38 @@ pendingItemsButton.addEventListener("click", () => {
   manageItemsContainer.style.display = "none";
 });
 
-function addListItem(item) {
-  const ul = document.getElementById("list");
+function addListItems(items) {
+  const pendingList = document.querySelector("#pending-list");
 
   const li = document.createElement("li");
 
-  li.innerHTML = `
-    <img src="${item.imageUrl}" alt="picture of item" />
+  items.forEach((item) => {
+    li.innerHTML = `
+    <img src="${item.images[0]}" alt="picture of item" />
     <div class="listing-text-container">
       <p class="listing-title">${item.title}</p>
-      <p>${item.date}</p>
+      <p>${item.dateFound}</p>
       <p>${item.location}</p>
     </div>
   `;
-
-  ul.appendChild(li);
+    pendingList.appendChild(li);
+  });
 }
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const res = await fetch("https://mhslostandfound.com/api/v1/items/", {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const data = await res.json();
+    addListItems(data);
+  } catch (error) {
+    console.log(error);
+  }
+
+  addListItems();
+});
