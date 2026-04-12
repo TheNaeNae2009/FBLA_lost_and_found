@@ -6,10 +6,10 @@ itemRouter.post("/upload");
 
 itemRouter.get("/");
 
-itemRouter.get("/:id");
+itemRouter.get("/:name");
 
-itemRouter.patch("/approve/:id");
+itemRouter.patch("/approve/:name");
 
-itemRouter.patch("/reject/:id");
+itemRouter.patch("/reject/:name");
 
 export default itemRouter;
