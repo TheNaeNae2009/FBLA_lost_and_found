@@ -5,7 +5,9 @@ export const uploadItem = async (req, res, next) => {
   session.startTransaction();
 
   try {
-    const { name, images, dateFound, location, description } = req.body;
+    const { name, dateFound, location, description } = req.body;
+
+    const imagePaths = req.files.map((file) => file.path);
 
     // Check if a user already exists
     const existingItem = await Item.findOne({ name });
@@ -16,9 +18,12 @@ export const uploadItem = async (req, res, next) => {
       throw error;
     }
 
-    const newItems = await Item.create([{ name, images, status: "pending", dateFound, location, description }], {
-      session,
-    });
+    const newItems = await Item.create(
+      [{ name, images: imagePaths, status: "pending", dateFound, location, description }],
+      {
+        session,
+      },
+    );
 
     await session.commitTransaction();
     session.endSession();

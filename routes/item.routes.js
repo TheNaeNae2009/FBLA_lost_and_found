@@ -1,8 +1,9 @@
 import { Router } from "express";
+import { authorize } from "../middlewares/auth.middleware.js";
+import { upload } from "../middlewares/upload.middleware.js";
+import { uploadItem } from "../controllers/item.controller.js";
 
-const itemRouter = Router();
-
-itemRouter.post("/upload");
+itemRouter.post("/upload", authorize, upload.array("images", 5), uploadItem);
 
 itemRouter.get("/");
 

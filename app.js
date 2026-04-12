@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 // Routers
 import userRouter from "./routes/user.routes.js";
 import authRouter from "./routes/auth.routes.js";
+import itemRouter from "./routes/item.routes.js";
 
 // DB
 import connectToDatabase from "./database/mongodb.js";
@@ -29,6 +30,7 @@ app.use(arcjetMiddleware);
 
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/items", itemRouter);
 
 app.use(errorMiddleware);
 
