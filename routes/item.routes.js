@@ -7,12 +7,12 @@ const itemRouter = Router();
 
 itemRouter.post("/upload", authorize, upload.array("images", 5), uploadItem);
 
-itemRouter.get("/");
+// itemRouter.get("/");
 
-itemRouter.get("/:name");
+// itemRouter.get("/:name");
 
-itemRouter.patch("/approve/:name");
+// itemRouter.patch("/approve/:name");
 
-itemRouter.patch("/reject/:name");
+// itemRouter.patch("/reject/:name");
 
 export default itemRouter;
