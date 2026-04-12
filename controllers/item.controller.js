@@ -12,7 +12,7 @@ export const uploadItem = async (req, res, next) => {
 
     const { name, dateFound, location, description } = req.body;
 
-    const imagePaths = req.files.map((file) => file.path);
+    const imagePaths = req.files.map((file) => file.name);
 
     const existingItem = await Item.findOne({ name });
 

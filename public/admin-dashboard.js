@@ -32,10 +32,10 @@ function addListItems(data) {
   data.forEach((data) => {
     const li = document.createElement("li");
 
-    const img = data.images?.[0] || "/assets/default.jpg";
+    const img = data.images?.[0] || "/";
 
     li.innerHTML = `
-    <img src="${img.startsWith("http") ? img : "/" + img}" />
+    <img src="https://mhslostandfound.com/uploads/${img}" />
     <div class="listing-text-container">
       <p class="listing-title">${data.name}</p>
       <p>${data.dateFound}</p>
