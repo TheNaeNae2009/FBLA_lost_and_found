@@ -10,11 +10,11 @@ export const uploadItem = async (req, res, next) => {
     console.log(req.body);
     console.log(req.file);
 
-    const { title, dateFound, location, description } = req.body;
+    const { name, dateFound, location, description } = req.body;
 
     const imagePaths = req.files.map((file) => file.path);
 
-    const existingItem = await Item.findOne({ title });
+    const existingItem = await Item.findOne({ name });
 
     if (existingItem) {
       const error = new Error("Item already exists");
@@ -23,7 +23,7 @@ export const uploadItem = async (req, res, next) => {
     }
 
     const newItems = await Item.create(
-      [{ title, images: imagePaths, status: "pending", dateFound, location, description }],
+      [{ name, images: imagePaths, status: "pending", dateFound, location, description }],
       {
         session,
       },

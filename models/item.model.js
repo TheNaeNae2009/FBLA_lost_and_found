@@ -2,9 +2,9 @@ import mongoose from "mongoose";
 
 const itemSchema = new mongoose.Schema(
   {
-    title: {
+    name: {
       type: String,
-      required: [true, "Item title is required"],
+      required: [true, "Item name is required"],
       trim: true,
       minLength: 2,
       maxLength: 50,
