@@ -4,28 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Dashboard</title>
-    <link rel="icon" href="assets/icons/milton-logo.png">
+    <link rel="icon" href="assets/icons/milton-logo.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <aside>
-      <a href="index.html">
-        <img src="assets/icons/milton-logo.svg" alt="milton logo" />
+  <body class="dashboard-body">
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="index-link">
+        <img src="assets/icons/milton-logo.svg" alt="milton logo" class="milton-logo-link" />
         <h1>MHS Lost & Found</h1>
       </a>
       <ul>
-        <li><button data-view="dashboard">Browse Items</button></li>
-        <li><button data-view="items">Report Item</button></li>
-        <li><button data-view="claims">Claims</button></li>
+        <li><button data-view="dashboard" id="browse-items-button">Browse Items</button></li>
+        <li><button data-view="items" id="report-items-button">Report Item</button></li>
       </ul>
     </aside>
 
-    <main>
+    <main class="student-dashboard-main">
       <section class="top-bar">
         <h2>title</h2>
       </section>
 
-      <section class="browse-item-container">
+      <section class="browse-item-container" id="browse-item-container">
         <div class="searchable-list" id="searchable-list">
           <div class="input-group">
             <input type="text" id="search-input" placeholder="Search..." />
@@ -97,7 +96,16 @@
 
       <section class="claim-item-container"></section>
 
-      <section class="report-item-container"></section>
+      <section class="report-item-container" id="report-item-container">
+        <form id="new-item-form" class="new-item-form">
+          <input type="text" name="title" placeholder="Item title" />
+          <input type="file" name="files" />
+          <input type="text" name="dateFound" placeholder="Date found: mm/dd/yyyy" />
+          <input type="text" name="location" placeholder="location found" />
+          <textarea name="description" placeholder="description..." class="item-description"></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
   </body>
 </html>
