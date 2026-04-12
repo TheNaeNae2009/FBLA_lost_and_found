@@ -58,7 +58,7 @@ export const getItems = async (req, res, next) => {
 
 export const getItem = async (req, res, next) => {
   try {
-    const item = await Item.findOne({ name: req.params.name });
+    const item = await Item.findOne({ title: req.params.title });
 
     if (!item) {
       const error = new Error("Item not found");
