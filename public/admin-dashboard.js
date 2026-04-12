@@ -29,14 +29,14 @@ pendingItemsButton.addEventListener("click", () => {
 function addListItems(data) {
   const pendingList = document.querySelector("#pending-list");
 
-  data.forEach((item) => {
+  data.forEach((data) => {
     const li = document.createElement("li");
     li.innerHTML = `
-    <img src="${item.images[0]}" alt="picture of item" />
+    <img src="${data.images[0]}" alt="picture of item" />
     <div class="listing-text-container">
-      <p class="listing-title">${item.title}</p>
-      <p>${item.dateFound}</p>
-      <p>${item.location}</p>
+      <p class="listing-title">${data.title}</p>
+      <p>${data.dateFound}</p>
+      <p>${data.location}</p>
     </div>
   `;
     pendingList.appendChild(li);
