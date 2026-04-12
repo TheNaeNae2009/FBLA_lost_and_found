@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { authorize } from "../middlewares/auth.middleware.js";
+import authorize from "../middlewares/auth.middleware.js";
 import { upload } from "../middlewares/upload.middleware.js";
 import { uploadItem } from "../controllers/item.controller.js";
 
