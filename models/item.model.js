@@ -2,10 +2,6 @@ import mongoose from "mongoose";
 
 const itemSchema = new mongoose.Schema(
   {
-    title: {
-      type: String,
-      unique: false,
-    },
     name: {
       type: String,
       required: [true, "Item name is required"],
