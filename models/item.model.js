@@ -8,9 +8,15 @@ const itemSchema = new mongoose.Schema(
       trim: true,
       minLength: 2,
       maxLength: 50,
+      unique: true,
     },
     images: {
       type: [String],
+    },
+    status: {
+      type: String,
+      enum: ["approved", "rejected", "pending"],
+      required: [true, "Status is required"],
     },
     dateFound: {
       type: String,

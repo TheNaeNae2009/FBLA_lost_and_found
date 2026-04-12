@@ -8,4 +8,8 @@ itemRouter.get("/");
 
 itemRouter.get("/:id");
 
-export default authRouter;
+itemRouter.patch("/approve/:id");
+
+itemRouter.patch("/reject/:id");
+
+export default itemRouter;
