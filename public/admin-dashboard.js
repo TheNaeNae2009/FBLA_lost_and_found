@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch("https://mhslostandfound.com/api/v1/items/", {
+    const res = await fetch("https://mhslostandfound.com/api/v1/items/pending", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
