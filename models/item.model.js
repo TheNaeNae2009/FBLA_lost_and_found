@@ -1,0 +1,37 @@
+import mongoose from "mongoose";
+
+const itemSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "Item Name is required"],
+      trim: true,
+      minLength: 2,
+      maxLength: 50,
+    },
+    images: {
+      type: [String],
+    },
+    dateFound: {
+      type: String,
+      required: [true, "Date is required"],
+      trim: true,
+      minLength: 6,
+    },
+    location: {
+      type: String,
+      required: [true, "location is required"],
+      trim: true,
+    },
+    description: {
+      type: String,
+      required: [true, "Description is required"],
+      trim: true,
+    },
+  },
+  { timestamps: true },
+);
+
+const Item = mongoose.model("Item", itemSchema);
+
+export default Item;
