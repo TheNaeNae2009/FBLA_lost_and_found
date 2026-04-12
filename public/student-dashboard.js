@@ -28,11 +28,10 @@ const reportItemForm = document.querySelector("#new-item-form");
 reportItemForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const formData = new formData(reportItemForm);
+  const formData = new FormData(reportItemForm);
 
   try {
-    const res = await ("https://mhslostandfound.com/api/v1/items/",
-    {
+    const res = await fetch("https://mhslostandfound.com/api/v1/items/", {
       method: "POST",
       body: formData,
     });
