@@ -7,11 +7,13 @@ export const uploadItem = async (req, res, next) => {
   session.startTransaction();
 
   try {
+    console.log(req.body);
+    console.log(req.file);
+
     const { name, dateFound, location, description } = req.body;
 
     const imagePaths = req.files.map((file) => file.path);
 
-    // Check if a user already exists
     const existingItem = await Item.findOne({ name });
 
     if (existingItem) {
