@@ -60,6 +60,4 @@ document.addEventListener("DOMContentLoaded", async () => {
   } catch (error) {
     console.log(error);
   }
-
-  addListItems();
 });
