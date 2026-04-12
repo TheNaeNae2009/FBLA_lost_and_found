@@ -9,6 +9,8 @@ itemRouter.post("/", authorize, upload.array("files"), uploadItem);
 
 itemRouter.get("/", authorize, getItems);
 
+itemRouter.get("/pending", authorize, getItems);
+
 // itemRouter.get("/:name");
 
 // itemRouter.patch("/approve/:name");
