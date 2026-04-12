@@ -26,12 +26,11 @@ pendingItemsButton.addEventListener("click", () => {
   manageItemsContainer.style.display = "none";
 });
 
-function addListItems(items) {
+function addListItems(data) {
   const pendingList = document.querySelector("#pending-list");
 
-  const li = document.createElement("li");
-
-  items.forEach((item) => {
+  data.forEach((item) => {
+    const li = document.createElement("li");
     li.innerHTML = `
     <img src="${item.images[0]}" alt="picture of item" />
     <div class="listing-text-container">
@@ -53,8 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => {
       headers: { Authorization: `Bearer ${token}` },
     });
 
-    const data = await res.json();
-    addListItems(data);
+    const response = await res.json();
+    addListItems(response.data);
   } catch (error) {
     console.log(error);
   }
