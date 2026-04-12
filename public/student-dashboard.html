@@ -14,8 +14,8 @@
         <h1>MHS Lost & Found</h1>
       </a>
       <ul>
-        <li><button data-view="dashboard" id="browse-items-button">Browse Items</button></li>
-        <li><button data-view="items" id="report-items-button">Report Item</button></li>
+        <li><button id="browse-items-button">Browse Items</button></li>
+        <li><button id="report-items-button">Report Item</button></li>
       </ul>
     </aside>
 
@@ -90,11 +90,11 @@
         </div>
       </section>
 
-      <section class="listing-info-container"></section>
+      <section class="listing-info-container" id="listing-info-container"></section>
 
-      <section class="inquire-container"></section>
+      <section class="inquire-container" id="inquire-container"></section>
 
-      <section class="claim-item-container"></section>
+      <section class="claim-item-container" id="claim-item-container"></section>
 
       <section class="report-item-container" id="report-item-container">
         <form id="new-item-form" class="new-item-form">
@@ -107,5 +107,6 @@
         </form>
       </section>
     </main>
+    <script src="student-dashboard.js"></script>
   </body>
 </html>

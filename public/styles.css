@@ -419,6 +419,7 @@ footer a:focus-visible {
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 100%;
   gap: 1rem;
 }
 
@@ -997,6 +998,10 @@ footer a:focus-visible {
   flex-direction: row;
 }
 
+.dashboard-body main {
+  width: 100%;
+}
+
 .dashboard-sidebar {
   display: flex;
   flex-direction: column;
@@ -1050,8 +1055,11 @@ footer a:focus-visible {
   width: 100%;
 }
 
+/* report item section */
+
 .report-item-container {
   width: 100%;
+  height: 100%;
   display: flex;
 }
 
