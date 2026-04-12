@@ -31,8 +31,11 @@ function addListItems(data) {
 
   data.forEach((data) => {
     const li = document.createElement("li");
+
+    const img = item.images?.[0] || "/assets/default.jpg";
+
     li.innerHTML = `
-    <img src="${data.images[0]}" alt="picture of item" />
+    <img src="${img.startsWith("http") ? img : "/" + img}" />
     <div class="listing-text-container">
       <p class="listing-title">${data.title}</p>
       <p>${data.dateFound}</p>
@@ -53,7 +56,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     const response = await res.json();
-    addListItems(response.data);
+    addListItems(response.data.data);
   } catch (error) {
     console.log(error);
   }
