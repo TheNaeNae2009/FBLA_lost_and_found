@@ -486,6 +486,12 @@ footer a:focus-visible {
   object-fit: contain;
 }
 
+.searchable-list li p {
+  font-family: "Figtree", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text-color);
+}
+
 .listing-title {
   font-weight: bold;
   font-size: 1.5rem;
