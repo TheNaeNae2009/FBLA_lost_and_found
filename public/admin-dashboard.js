@@ -8,7 +8,11 @@ const inquiryResponseContainer = document.querySelector("#inquiry-response-conta
 const browsePendingItemsContainer = document.querySelector("#browse-pending-item-container");
 const manageItemsContainer = document.querySelector("#manage-item-container");
 
+const adminTitle = document.querySelector("#admin-title");
+
 browseItemsButton.addEventListener("click", () => {
+  location.reload();
+  adminTitle.textContent = "Browse Items";
   browseItemsContainer.style.display = "flex";
   adminListingInfoContainer.style.display = "none";
   claimApprovalContainer.style.display = "none";
@@ -18,6 +22,8 @@ browseItemsButton.addEventListener("click", () => {
 });
 
 pendingItemsButton.addEventListener("click", () => {
+  location.reload();
+  adminTitle.textContent = "Pending Items";
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "none";
   claimApprovalContainer.style.display = "none";
@@ -76,6 +82,8 @@ const itemDescription = document.querySelector("#item-description");
 const imagelist = document.querySelector("#image-list");
 
 function openAdminListingInfo(data) {
+  location.reload();
+  adminTitle.textContent = "Item Details";
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "flex";
   claimApprovalContainer.style.display = "none";
@@ -96,3 +104,54 @@ function openAdminListingInfo(data) {
   });
 
 }
+
+const approveButton = document.querySelector("#approve-button");
+const rejectButton = document.querySelector("#reject-button");
+
+approveButton.addEventListener("click", async () => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/approve/${posterName.textContent.split(": ")[1]}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const response = await res.json();
+    console.log(response);
+    location.reload();
+  }catch (error) {
+      const response = await error.json();
+      console.log(response);
+  }
+});
+rejectButton.addEventListener("click", async () => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/reject/${posterName.textContent.split(": ")[1]}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const response = await res.json();
+    console.log(response);
+    location.reload();
+  }catch (error) {
+      const response = await error.json();
+      console.log(response);
+  }
+});
+
+const adminListingBackButton = document.querySelector("#admin-listing-back");
+
+adminListingBackButton.addEventListener("click", () => {
+  location.reload();
+  adminTitle.textContent = "Pending Items";
+  browseItemsContainer.style.display = "none";
+  adminListingInfoContainer.style.display = "none";
+  claimApprovalContainer.style.display = "none";
+  inquiryResponseContainer.style.display = "none";
+  browsePendingItemsContainer.style.display = "flex";
+  manageItemsContainer.style.display = "none";
+});
