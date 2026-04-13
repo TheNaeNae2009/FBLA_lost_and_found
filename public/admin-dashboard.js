@@ -169,11 +169,12 @@ adminListingBackButton.addEventListener("click", () => {
 // searchable list display update
 const searchableList = document.getElementById("searchable-list");
 const searchInput = document.getElementById("search-input");
-const lists = document.querySelectorAll("#list li");
+let lists = document.querySelectorAll("#list li");
 const xIcon = document.getElementById("x-icon");
 const searchIcon = document.getElementById("search-icon");
 
 const updateDisplay = () => {
+  lists = document.querySelectorAll("#list li");
   const searchTerm = searchInput.value.trim().toLowerCase();
   xIcon.style.display = searchTerm ? "block" : "none";
   searchIcon.style.display = searchTerm ? "none" : "block";
