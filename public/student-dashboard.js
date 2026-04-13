@@ -3,14 +3,12 @@ const reportItemsButton = document.querySelector("#report-items-button");
 
 const browseItemsContainer = document.querySelector("#browse-item-container");
 const listingInfoContainer = document.querySelector("#listing-info-container");
-const inquireContainer = document.querySelector("#inquire-container");
 const claimItemContainer = document.querySelector("#claim-item-container");
 const reportItemContainer = document.querySelector("#report-item-container");
 
 browseItemsButton.addEventListener("click", () => {
   browseItemsContainer.style.display = "flex";
   listingInfoContainer.style.display = "none";
-  inquireContainer.style.display = "none";
   claimItemContainer.style.display = "none";
   reportItemContainer.style.display = "none";
 });
@@ -18,7 +16,6 @@ browseItemsButton.addEventListener("click", () => {
 reportItemsButton.addEventListener("click", () => {
   browseItemsContainer.style.display = "none";
   listingInfoContainer.style.display = "none";
-  inquireContainer.style.display = "none";
   claimItemContainer.style.display = "none";
   reportItemContainer.style.display = "flex";
 });
@@ -65,7 +62,7 @@ function addListItems(data, listElement){
     listElement.appendChild(li);
     if (listElement.id === "pending-list") {
       li.addEventListener("click", () => {
-        
+        openStudentListingInfo(data);
       });
     }
   });
@@ -115,4 +112,36 @@ if (searchableList) {
     searchInput.value = "";
     updateDisplay();
   });
+}
+
+const listingTitle = document.querySelector("#listing-title");
+const imageList = document.querySelector("#image-list");
+const itemDate = document.querySelector("#item-date");
+const itemLocation = document.querySelector("#item-location");
+const itemDescription = document.querySelector("#item-description");
+
+const claimItemButton = document.querySelector("#claim-item-button");
+const backButton = document.querySelector("#back-button");
+
+
+function openStudentListingInfo(data) {
+  listingData = data;
+  listingTitle.textContent = "Item Details";
+
+  browseItemsContainer.style.display = "none";
+  listingInfoContainer.style.display = "flex";
+  claimItemContainer.style.display = "none";
+  reportItemContainer.style.display = "none";
+
+  itemDate.textContent = `Date: ${data.dateFound}`;
+  itemLocation.textContent = `Found: ${data.location}`;
+  itemDescription.textContent = `Description: ${data.description}`;
+
+  imagelist.innerHTML = "";
+  data.images.forEach((image) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<img src="https://mhslostandfound.com/uploads/${image}" />`;
+    imagelist.appendChild(li);
+  });
+
 }

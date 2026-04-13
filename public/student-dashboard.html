@@ -37,11 +37,22 @@
         </div>
       </section>
 
-      <section class="listing-info-container" id="listing-info-container"></section>
+      <section class="listing-info-container" id="listing-info-container">
+        <h3 id="listing-title">title</h3>
+        <ul id="image-list"></ul>
+        <p id="item-date">Date: xx/xx/xxxx</p>
+        <p id="item-location">Found: item location</p>
+        <p id="item-description">Description: item description</p>
+        <button id="claim-item-button">Claim Item</button>
+        <button id="back-button">Back</button>
+      </section>
 
-      <section class="inquire-container" id="inquire-container"></section>
-
-      <section class="claim-item-container" id="claim-item-container"></section>
+      <section class="claim-item-container" id="claim-item-container">
+          <form id="claim-item-form" class="claim-item-form">
+            <textarea name="description" placeholder="Any questions about the item?" class="claim-description"></textarea>
+            <button type="submit">Submit Claim</button>
+          </form>
+      </section>
 
       <section class="report-item-container" id="report-item-container">
         <form id="new-item-form" class="new-item-form">

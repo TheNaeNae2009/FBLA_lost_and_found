@@ -108,6 +108,7 @@ function openAdminListingInfo(data) {
   itemLocation.textContent = `Found: ${data.location}`;
   itemDescription.textContent = `Description: ${data.description}`;
 
+  imagelist.innerHTML = "";
   data.images.forEach((image) => {
     const li = document.createElement("li");
     li.innerHTML = `<img src="https://mhslostandfound.com/uploads/${image}" />`;

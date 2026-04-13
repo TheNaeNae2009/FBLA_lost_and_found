@@ -19,7 +19,7 @@ const itemSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["approved", "rejected", "pending"],
+      enum: ["approved", "rejected", "pending", "claimed"],
       required: [true, "Status is required"],
     },
     dateFound: {
