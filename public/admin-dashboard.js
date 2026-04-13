@@ -153,3 +153,59 @@ adminListingBackButton.addEventListener("click", () => {
   browsePendingItemsContainer.style.display = "flex";
   manageItemsContainer.style.display = "none";
 });
+
+// searchable list display update
+const searchableList = document.getElementById("searchable-list");
+const searchInput = document.getElementById("search-input");
+const lists = document.querySelectorAll("#list li");
+const xIcon = document.getElementById("x-icon");
+const searchIcon = document.getElementById("search-icon");
+
+const updateDisplay = () => {
+  const searchTerm = searchInput.value.trim().toLowerCase();
+  xIcon.style.display = searchTerm ? "block" : "none";
+  searchIcon.style.display = searchTerm ? "none" : "block";
+
+  lists.forEach((item) => {
+    const textContainer = item.querySelector(".listing-text-container");
+    const title = textContainer.querySelector(".listing-title");
+    const titleText = title.textContent.trim().toLowerCase();
+    item.style.display = titleText.includes(searchTerm) ? "flex" : "none";
+  });
+};
+
+if (searchableList) {
+  searchInput.addEventListener("input", updateDisplay);
+  xIcon.addEventListener("click", () => {
+    searchInput.value = "";
+    updateDisplay();
+  });
+}
+
+// searchable list display update
+const pendingSearchableList = document.getElementById("pending-searchable-list");
+const pendingSearchInput = document.getElementById("pending-search-input");
+const pendingLists = document.querySelectorAll("#pending-list li");
+const PendingxIcon = document.getElementById("pending-x-icon");
+const PendingsearchIcon = document.getElementById("pending-search-icon");
+
+const pendingUpdateDisplay = () => {
+  const searchTerm = pendingSearchInput.value.trim().toLowerCase();
+  PendingxIcon.style.display = searchTerm ? "block" : "none";
+  PendingsearchIcon.style.display = searchTerm ? "none" : "block";
+
+  pendingLists.forEach((item) => {
+    const textContainer = item.querySelector(".listing-text-container");
+    const title = textContainer.querySelector(".listing-title");
+    const titleText = title.textContent.trim().toLowerCase();
+    item.style.display = titleText.includes(searchTerm) ? "flex" : "none";
+  });
+};
+
+if (pendingSearchableList) {
+  pendingSearchInput.addEventListener("input", pendingUpdateDisplay);
+  PendingxIcon.addEventListener("click", () => {
+    pendingSearchInput.value = "";
+    pendingUpdateDisplay();
+  });
+}
