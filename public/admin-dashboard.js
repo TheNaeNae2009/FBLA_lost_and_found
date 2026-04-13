@@ -31,6 +31,8 @@ pendingItemsButton.addEventListener("click", () => {
 function addListItems(data, listElement){
   data.forEach((data) => {
     const li = document.createElement("li");
+    li.setAttribute("tabindex", "0");
+    li.setAttribute("aria-label", data.name);
 
     const img = data.images?.[0] || "/";
 
