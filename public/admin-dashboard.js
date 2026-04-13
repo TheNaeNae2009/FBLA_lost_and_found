@@ -77,8 +77,8 @@ const imagelist = document.querySelector("#image-list");
 
 function openAdminListingInfo(data) {
   browseItemsContainer.style.display = "none";
-  adminListingInfoContainer.style.display = "none";
-  claimApprovalContainer.style.display = "flex";
+  adminListingInfoContainer.style.display = "flex";
+  claimApprovalContainer.style.display = "none";
   inquiryResponseContainer.style.display = "none";
   browsePendingItemsContainer.style.display = "none";
   manageItemsContainer.style.display = "none";
@@ -94,5 +94,5 @@ function openAdminListingInfo(data) {
     li.innerHTML = `<img src="https://mhslostandfound.com/uploads/${image}" />`;
     imagelist.appendChild(li);
   });
-  
+
 }
