@@ -78,7 +78,7 @@ const itemDate = document.querySelector("#item-date");
 const itemLocation = document.querySelector("#item-location");
 const itemDescription = document.querySelector("#item-description");
 const imagelist = document.querySelector("#image-list");
-const listingData = null;
+let listingData = null;
 
 function openAdminListingInfo(data) {
   listingData = data;
