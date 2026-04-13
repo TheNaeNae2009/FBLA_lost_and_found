@@ -79,7 +79,7 @@ export const getApprovedItems = async (req, res, next) => {
 
 export const approveItem = async (req, res, next) => {
   try{
-    const item = await Item.findOneandUpdate({ name: req.params.name }, { status: "approved" }, { new: true });
+    const item = await Item.findOneAndUpdate({ name: req.params.name }, { status: "approved" }, { new: true });
   } catch (error) {
     next(error);
   }
@@ -87,7 +87,7 @@ export const approveItem = async (req, res, next) => {
 
 export const rejectItem = async (req, res, next) => {
   try{
-    const item = await Item.findOneandUpdate({ name: req.params.name }, { status: "rejected" }, { new: true });
+    const item = await Item.findOneAndUpdate({ name: req.params.name }, { status: "rejected" }, { new: true });
   } catch (error) {
     next(error);
   }
