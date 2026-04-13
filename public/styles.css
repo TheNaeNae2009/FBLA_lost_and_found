@@ -292,33 +292,6 @@ header button:active {
   filter: brightness(1.2);
 }
 
-/* settings styles */
-.settings-menu {
-  position: absolute;
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  right: 0;
-  top: 5rem;
-  background: var(--bg-color);
-  height: auto;
-  z-index: 100;
-}
-
-.settings-menu ul {
-  list-style: none;
-  padding: 1rem;
-}
-
-.settings-menu li {
-  display: flex;
-  padding: 0.5rem;
-  gap: 1rem;
-}
-
-.settings-menu label {
-  font-size: 1rem;
-}
 
 /* footer */
 footer {
@@ -1212,6 +1185,12 @@ footer a:focus-visible {
   padding: 0.3em;
   font-style: normal;
   width: 10rem;
+}
+
+.inquiry-form {
+  width: 75%;
+  height: 5rem;
+  padding: 0.5rem;
 }
 
 /* topbar styles */
