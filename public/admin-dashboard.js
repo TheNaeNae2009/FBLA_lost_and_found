@@ -111,7 +111,7 @@ approveButton.addEventListener("click", async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch(`https://mhslostandfound.com/api/v1/items/approve/${listingData.user.name}`, {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/approve/${listingData.name}`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -128,7 +128,7 @@ rejectButton.addEventListener("click", async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch(`https://mhslostandfound.com/api/v1/items/reject/${listingData.user.name}`, {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/reject/${listingData.name}`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
     });
