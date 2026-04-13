@@ -43,9 +43,11 @@ function addListItems(data, listElement){
     </div>
   `;
     listElement.appendChild(li);
-    li.addEventListener("click", () => {
-      openAdminListingInfo(data);
-    });
+    if (listElement.id === "pending-list") {
+      li.addEventListener("click", () => {
+        openAdminListingInfo(data);
+      });
+    }
   });
 }
 
