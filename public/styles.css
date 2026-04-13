@@ -1163,23 +1163,23 @@ footer a:focus-visible {
 }
 
 /* student listing info container styles */
-.student-listing-info-container {
+.listing-info-container {
   display: none;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 }
-.student-listing-info-container h3 {
+.listing-info-container h3 {
   font-family: "Figtree";
   font-size: 2rem;
   font-weight: bold;
   font-style: normal;
 }
-.student-listing-info-container p {
+.listing-info-container p {
   font-family: "Figtree";
   font-size: 1.2rem;
 }
-.student-listing-info-container ul {
+.listing-info-container ul {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -1189,15 +1189,15 @@ footer a:focus-visible {
   width: 50%;
 
 }
-.student-listing-info-container ul li{
+.listing-info-container ul li{
   width: 90%;
   height: 90%;
 }
-.student-listing-info-container ul li img {
+.listing-info-container ul li img {
   height: 100%;
   object-fit: contain;
 }
-.student-listing-info-container button {
+.listing-info-container button {
   font-family: "Figtree";
   font-size: 1.2rem;
   background-color: var(--accent-color);
