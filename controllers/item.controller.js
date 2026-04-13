@@ -95,6 +95,15 @@ export const rejectItem = async (req, res, next) => {
   }
 };
 
+export const claimItem = async (req, res, next) => {
+  try {
+    const item = await Item.findOneAndUpdate({ name: req.params.name }, { status: "claimed" }, { new: true });
+    res.status(200).json({ success: true, data: item });
+  } catch (error) {
+    next(error);
+  }
+}
+
 export const getItem = async (req, res, next) => {
   try {
     const item = await Item.findOne({ title: req.params.title }).populate("user", "-password");

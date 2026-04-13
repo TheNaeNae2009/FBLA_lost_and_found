@@ -99,6 +99,7 @@ const itemDescription = document.querySelector("#item-description");
 const claimItemButton = document.querySelector("#claim-item-button");
 const backButton = document.querySelector("#back-button");
 
+let listingData = null;
 
 function openStudentListingInfo(data) {
   listingData = data;
@@ -122,3 +123,27 @@ function openStudentListingInfo(data) {
   });
 
 }
+
+backButton.addEventListener("click", () => {
+  dashboardTitle.textContent = "Browse Items";
+  browseItemsContainer.style.display = "flex";
+  listingInfoContainer.style.display = "none";
+  claimItemContainer.style.display = "none";
+  reportItemContainer.style.display = "none";
+});
+
+claimItemButton.addEventListener("click", async () => {
+  const token = localStorage.getItem("token");
+
+  try {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/claim/${listingData.name}`, {
+      method: "PATCH",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    const data = await res.json();
+    console.log(data);
+    window.location.reload();
+  } catch (error) {
+    console.log(error);
+  }
+});
