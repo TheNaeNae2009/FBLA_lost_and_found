@@ -38,6 +38,7 @@ reportItemForm.addEventListener("submit", async (e) => {
 
     const data = await res.json();
     console.log(data);
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }
@@ -108,11 +109,11 @@ function openStudentListingInfo(data) {
   itemLocation.textContent = `Found: ${data.location}`;
   itemDescription.textContent = `Description: ${data.description}`;
 
-  imagelist.innerHTML = "";
+  imageList.innerHTML = "";
   data.images.forEach((image) => {
     const li = document.createElement("li");
     li.innerHTML = `<img src="https://mhslostandfound.com/uploads/${image}" />`;
-    imagelist.appendChild(li);
+    imageList.appendChild(li);
   });
 
 }
