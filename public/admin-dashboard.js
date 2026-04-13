@@ -11,7 +11,6 @@ const manageItemsContainer = document.querySelector("#manage-item-container");
 const adminTitle = document.querySelector("#admin-title");
 
 browseItemsButton.addEventListener("click", () => {
-  location.reload();
   adminTitle.textContent = "Browse Items";
   browseItemsContainer.style.display = "flex";
   adminListingInfoContainer.style.display = "none";
@@ -22,7 +21,6 @@ browseItemsButton.addEventListener("click", () => {
 });
 
 pendingItemsButton.addEventListener("click", () => {
-  location.reload();
   adminTitle.textContent = "Pending Items";
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "none";
@@ -82,7 +80,6 @@ const itemDescription = document.querySelector("#item-description");
 const imagelist = document.querySelector("#image-list");
 
 function openAdminListingInfo(data) {
-  location.reload();
   adminTitle.textContent = "Item Details";
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "flex";
@@ -146,7 +143,6 @@ rejectButton.addEventListener("click", async () => {
 const adminListingBackButton = document.querySelector("#admin-listing-back");
 
 adminListingBackButton.addEventListener("click", () => {
-  location.reload();
   adminTitle.textContent = "Pending Items";
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "none";
