@@ -60,11 +60,11 @@ function addListItems(data, listElement){
     </div>
   `;
     listElement.appendChild(li);
-    if (listElement.id === "pending-list") {
-      li.addEventListener("click", () => {
-        openStudentListingInfo(data);
-      });
-    }
+
+    li.addEventListener("click", () => {
+      openStudentListingInfo(data);
+    });
+    
   });
 }
 

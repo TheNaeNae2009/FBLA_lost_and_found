@@ -197,11 +197,12 @@ if (searchableList) {
 // searchable list display update
 const pendingSearchableList = document.getElementById("pending-searchable-list");
 const pendingSearchInput = document.getElementById("pending-search-input");
-const pendingLists = document.querySelectorAll("#pending-list li");
+let pendingLists = document.querySelectorAll("#pending-list li");
 const PendingxIcon = document.getElementById("pending-x-icon");
 const PendingsearchIcon = document.getElementById("pending-search-icon");
 
 const pendingUpdateDisplay = () => {
+  pendingLists = document.querySelectorAll("#pending-list li");
   const searchTerm = pendingSearchInput.value.trim().toLowerCase();
   PendingxIcon.style.display = searchTerm ? "block" : "none";
   PendingsearchIcon.style.display = searchTerm ? "none" : "block";
