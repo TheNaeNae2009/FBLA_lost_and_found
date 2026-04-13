@@ -23,7 +23,7 @@ export const uploadItem = async (req, res, next) => {
     }
 
     const newItems = await Item.create(
-      [{ name, images: imagePaths, status: "pending", dateFound, location, description }],
+      [{ name, images: imagePaths, user: req.user.id, status: "pending", dateFound, location, description }],
       {
         session,
       },
@@ -48,7 +48,7 @@ export const uploadItem = async (req, res, next) => {
 
 export const getItems = async (req, res, next) => {
   try {
-    const items = await Item.find();
+    const items = await Item.find().populate("user", "-password");
 
     res.status(200).json({ success: true, data: items });
   } catch (error) {
@@ -58,7 +58,7 @@ export const getItems = async (req, res, next) => {
 
 export const getPendingItems = async (req, res, next) => {
   try {
-    const items = await Item.find({ status:"pending" });
+    const items = await Item.find({ status:"pending" }).populate("user", "-password");
 
     res.status(200).json({ success: true, data: items });
   } catch (error) {
@@ -67,9 +67,35 @@ export const getPendingItems = async (req, res, next) => {
 };
 
 
+export const getApprovedItems = async (req, res, next) => {
+  try {
+    const items = await Item.find({ status:"approved" }).populate("user", "-password");
+
+    res.status(200).json({ success: true, data: items });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const approveItem = async (req, res, next) => {
+  try{
+    const item = await Item.findOneandUpdate({ name: req.params.name }, { status: "approved" }, { new: true });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const rejectItem = async (req, res, next) => {
+  try{
+    const item = await Item.findOneandUpdate({ name: req.params.name }, { status: "rejected" }, { new: true });
+  } catch (error) {
+    next(error);
+  }
+};
+
 export const getItem = async (req, res, next) => {
   try {
-    const item = await Item.findOne({ title: req.params.title });
+    const item = await Item.findOne({ title: req.params.title }).populate("user", "-password");
 
     if (!item) {
       const error = new Error("Item not found");

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import authorize from "../middlewares/auth.middleware.js";
 import { upload } from "../middlewares/upload.middleware.js";
-import { getItems, uploadItem, getPendingItems } from "../controllers/item.controller.js";
+import { getItems, uploadItem, getPendingItems, approveItem, rejectItem } from "../controllers/item.controller.js";
 
 const itemRouter = Router();
 
@@ -13,8 +13,8 @@ itemRouter.get("/pending", authorize, getPendingItems);
 
 // itemRouter.get("/:name");
 
-// itemRouter.patch("/approve/:name");
+itemRouter.patch("/approve/:name", authorize, approveItem);
 
-// itemRouter.patch("/reject/:name");
+itemRouter.patch("/reject/:name", authorize, rejectItem);
 
 export default itemRouter;

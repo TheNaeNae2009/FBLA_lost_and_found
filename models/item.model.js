@@ -13,6 +13,10 @@ const itemSchema = new mongoose.Schema(
     images: {
       type: [String],
     },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    },
     status: {
       type: String,
       enum: ["approved", "rejected", "pending"],
