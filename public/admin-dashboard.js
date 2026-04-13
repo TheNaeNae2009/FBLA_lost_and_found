@@ -78,8 +78,10 @@ const itemDate = document.querySelector("#item-date");
 const itemLocation = document.querySelector("#item-location");
 const itemDescription = document.querySelector("#item-description");
 const imagelist = document.querySelector("#image-list");
+const listingData = null;
 
 function openAdminListingInfo(data) {
+  listingData = data;
   adminTitle.textContent = "Item Details";
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "flex";
@@ -109,7 +111,7 @@ approveButton.addEventListener("click", async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch(`https://mhslostandfound.com/api/v1/items/approve/${posterName.textContent.split(": ")[1]}`, {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/approve/${listingData.user.name}`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -126,7 +128,7 @@ rejectButton.addEventListener("click", async () => {
   const token = localStorage.getItem("token");
 
   try {
-    const res = await fetch(`https://mhslostandfound.com/api/v1/items/reject/${posterName.textContent.split(": ")[1]}`, {
+    const res = await fetch(`https://mhslostandfound.com/api/v1/items/reject/${listingData.user.name}`, {
       method: "PATCH",
       headers: { Authorization: `Bearer ${token}` },
     });
