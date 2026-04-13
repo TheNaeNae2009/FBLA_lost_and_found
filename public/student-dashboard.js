@@ -6,7 +6,10 @@ const listingInfoContainer = document.querySelector("#listing-info-container");
 const claimItemContainer = document.querySelector("#claim-item-container");
 const reportItemContainer = document.querySelector("#report-item-container");
 
+const dashboardTitle = document.querySelector("#student-dashboard-title");
+
 browseItemsButton.addEventListener("click", () => {
+  dashboardTitle.textContent = "Browse Items";
   browseItemsContainer.style.display = "flex";
   listingInfoContainer.style.display = "none";
   claimItemContainer.style.display = "none";
@@ -14,6 +17,7 @@ browseItemsButton.addEventListener("click", () => {
 });
 
 reportItemsButton.addEventListener("click", () => {
+  dashboardTitle.textContent = "Report Item";
   browseItemsContainer.style.display = "none";
   listingInfoContainer.style.display = "none";
   claimItemContainer.style.display = "none";
@@ -98,8 +102,9 @@ const backButton = document.querySelector("#back-button");
 
 function openStudentListingInfo(data) {
   listingData = data;
-  listingTitle.textContent = "Item Details";
+  listingTitle.textContent = data.name;
 
+  dashboardTitle.textContent = "Item Details";
   browseItemsContainer.style.display = "none";
   listingInfoContainer.style.display = "flex";
   claimItemContainer.style.display = "none";

@@ -1207,3 +1207,10 @@ footer a:focus-visible {
   font-style: normal;
   width: 10rem;
 }
+
+/* topbar styles */
+.top-bar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
