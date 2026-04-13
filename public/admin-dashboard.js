@@ -4,7 +4,6 @@ const pendingItemsButton = document.querySelector("#pending-items-button");
 const browseItemsContainer = document.querySelector("#browse-item-container");
 const adminListingInfoContainer = document.querySelector("#admin-listing-info-container");
 const claimApprovalContainer = document.querySelector("#claim-approval-container");
-const inquiryResponseContainer = document.querySelector("#inquiry-response-container");
 const browsePendingItemsContainer = document.querySelector("#browse-pending-item-container");
 const manageItemsContainer = document.querySelector("#manage-item-container");
 
@@ -15,7 +14,6 @@ browseItemsButton.addEventListener("click", () => {
   browseItemsContainer.style.display = "flex";
   adminListingInfoContainer.style.display = "none";
   claimApprovalContainer.style.display = "none";
-  inquiryResponseContainer.style.display = "none";
   browsePendingItemsContainer.style.display = "none";
   manageItemsContainer.style.display = "none";
 });
@@ -25,15 +23,12 @@ pendingItemsButton.addEventListener("click", () => {
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "none";
   claimApprovalContainer.style.display = "none";
-  inquiryResponseContainer.style.display = "none";
   browsePendingItemsContainer.style.display = "flex";
   manageItemsContainer.style.display = "none";
 });
 
 
-function addListItems(data) {
-  const pendingList = document.querySelector("#pending-list");
-
+function addListItems(data, listElement){
   data.forEach((data) => {
     const li = document.createElement("li");
 
@@ -47,7 +42,7 @@ function addListItems(data) {
       <p>${data.location}</p>
     </div>
   `;
-    pendingList.appendChild(li);
+    listElement.appendChild(li);
     li.addEventListener("click", () => {
       openAdminListingInfo(data);
     });
@@ -64,7 +59,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
 
     const response = await res.json();
-    addListItems(response.data);
+    addListItems(response.data, document.getElementById("pending-list"));
+    
+  } catch (error) {
+    console.log(error);
+  }
+
+  try {
+    const res = await fetch("https://mhslostandfound.com/api/v1/items/approved", {
+      method: "GET",
+      headers: { Authorization: `Bearer ${token}` },
+    });
+
+    const response = await res.json();
+    addListItems(response.data, document.getElementById("list"));
+    
   } catch (error) {
     console.log(error);
   }
@@ -86,7 +95,6 @@ function openAdminListingInfo(data) {
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "flex";
   claimApprovalContainer.style.display = "none";
-  inquiryResponseContainer.style.display = "none";
   browsePendingItemsContainer.style.display = "none";
   manageItemsContainer.style.display = "none";
 
@@ -149,7 +157,6 @@ adminListingBackButton.addEventListener("click", () => {
   browseItemsContainer.style.display = "none";
   adminListingInfoContainer.style.display = "none";
   claimApprovalContainer.style.display = "none";
-  inquiryResponseContainer.style.display = "none";
   browsePendingItemsContainer.style.display = "flex";
   manageItemsContainer.style.display = "none";
 });
